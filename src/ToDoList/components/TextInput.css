@@ -1,0 +1,13 @@
+.TextInputContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.ToDoList-InputTextBox {
+    justify-content: center;
+    padding: 14px 10px;
+    width: 45%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
