@@ -1,21 +1,32 @@
-.DisplayTextContainer {
-    display: flex;
+.ToDoList {
+    padding: 0;
+}
+
+.ToDoListContainer {
     width: 60%;
-    background-color: aqua;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.DisplayTextList {
-    list-style-type: none;
     display: flex;
-    flex-direction: column;
-    margin: 0;
+    margin: 10px auto;
+    border-radius: 8px;
 }
 
-.DisplayTextLine {
-    position: relative;
+.Text {
     font-size: 18px;
-    padding: 15px 0;
-    left: -15px;
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+}
+
+.DeleteButton {
+    margin-left: 12px;
+    padding: 14px 4px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.DeleteButton:hover {
+    background-color: red;
+    color: white;
 }

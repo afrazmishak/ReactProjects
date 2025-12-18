@@ -6,9 +6,9 @@ export function ToDoList() {
     const [tasks, setTasks] = useState([]);
     
     return (
-        <div>
+        <>
             <TextInput setTasks={setTasks} />
-            <DisplayText tasks={tasks} />
-        </div>
+            <DisplayText tasks={tasks} setTasks={setTasks} />
+        </>
     )
 }

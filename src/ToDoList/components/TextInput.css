@@ -28,5 +28,13 @@
 }
 
 .ToDoList-SubmitButton:hover {
-    background-color: #d0d0d0;
+    background-color: green;
+    color: white;
+}
+
+.ToDoList-SubmitButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #ccc;
+    color: #000;
 }

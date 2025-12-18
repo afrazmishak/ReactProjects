@@ -5,9 +5,10 @@ export function TextInput({ setTasks }) {
     const [inputValue, setInputValue] = useState('')
 
     const handleSubmit = () => {
-        if (!inputValue.trim()) return;
+        const trimmedValue = inputValue.trim()
+        if (!trimmedValue) return;
 
-        setTasks(prev => [...prev, inputValue])
+        setTasks(prev => [...prev, trimmedValue])
         setInputValue('')
     }
 
@@ -25,6 +26,7 @@ export function TextInput({ setTasks }) {
                 type="button"
                 className="ToDoList-SubmitButton"
                 onClick={handleSubmit}
+                disabled={!inputValue.trim()}
             >Add</button>
         </div>
     )
