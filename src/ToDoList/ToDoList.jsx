@@ -27,13 +27,13 @@ export function ToDoList() {
     
     return (
         <>
-            
             <TextInput setTasks={setTasks} />
             <DisplayText tasks={tasks} setTasks={setTasks} />
             <button
+                className="DarkModeToggle"
                 onClick={() => setDarkMode(prev => !prev)}
             >
-                {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+                {darkMode ? '☀️' : '🌙'}
             </button>
         </>
     )

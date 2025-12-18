@@ -3,6 +3,7 @@ body {
     background-color: #f5f5f5;
     color: #222;
     transition: background-color 0.3s, color 0.3s;
+    font-family: Arial;
 }
 
 /* 🌙 Dark mode */
@@ -23,6 +24,10 @@ body.dark .ToDoList-InputTextBox {
     border-color: #444;
 }
 
+body.dark .Text {
+    color: white;
+}
+
 body.dark .ToDoList-SubmitButton,
 body.dark .DeleteButton {
     background-color: #2a2a2a;
@@ -41,4 +46,35 @@ body.dark .ToDoList-SubmitButton:disabled {
 
 body.dark .DeleteButton:hover {
     background-color: #e53935;
+}
+
+.DarkModeToggle {
+    position: fixed;
+    right: 15px;
+    bottom: 5%;
+    transform: translateY(50%);
+
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+
+    border: none;
+    cursor: pointer;
+
+    font-size: 22px;
+
+    background-color: #ffffff;
+    color: #000000;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.DarkModeToggle:hover {
+    transform: translateY(50%) scale(1.05);
+}
+
+body.dark .DarkModeToggle {
+    background-color: #333333;
+    color: #ffffff;
 }

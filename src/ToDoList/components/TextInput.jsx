@@ -22,7 +22,7 @@ export function TextInput({ setTasks }) {
         <div className='TextInputContainer'>
             <input 
                 type="text" 
-                placeholder="Add a new task…"
+                placeholder="Add a new task …"
                 className="ToDoList-InputTextBox"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}

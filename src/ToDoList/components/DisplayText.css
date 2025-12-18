@@ -5,21 +5,23 @@
 .ToDoListContainer {
     width: 50%;
     display: flex;
-    margin: 10px auto;
+    margin: 14px auto;
     border-radius: 8px;
 }
 
 .Text {
     font-size: 18px;
     flex-grow: 1;
-    padding: 10px;
-    background-color: #f2f2f2;
+    padding: 14px 10px;
+    border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .DeleteButton {
     margin-left: 12px;
-    padding: 10px 4px;
+    padding: 14px 4px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 14px;
