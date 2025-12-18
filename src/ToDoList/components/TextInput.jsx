@@ -8,7 +8,13 @@ export function TextInput({ setTasks }) {
         const trimmedValue = inputValue.trim()
         if (!trimmedValue) return;
 
-        setTasks(prev => [...prev, trimmedValue])
+        const newTask = {
+            id: crypto.randomUUID(),
+            text: trimmedValue,
+            completed: false
+        }
+
+        setTasks(prev => [...prev, newTask])
         setInputValue('')
     }
 

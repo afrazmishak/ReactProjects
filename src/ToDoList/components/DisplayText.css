@@ -19,7 +19,7 @@
 
 .DeleteButton {
     margin-left: 12px;
-    padding: 14px 4px;
+    padding: 10px 4px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 14px;
@@ -29,4 +29,10 @@
 .DeleteButton:hover {
     background-color: red;
     color: white;
+}
+
+.Completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    cursor: pointer;
 }
