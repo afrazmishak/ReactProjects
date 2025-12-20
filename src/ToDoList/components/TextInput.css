@@ -9,9 +9,16 @@
 .ToDoList-InputTextBox {
     padding: 0 12px;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 2px solid #ffffff;
     border-radius: 8px;
     font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+    color: #ffffff;
+}
+
+.ToDoList-InputTextBox::placeholder {
+    color: rgb(228, 228, 228);
 }
 
 .ToDoList-InputTextBox:focus {

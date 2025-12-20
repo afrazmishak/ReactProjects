@@ -4,6 +4,10 @@ body {
     color: #222;
     transition: background-color 0.3s, color 0.3s;
     font-family: Arial;
+    margin: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 🌙 Dark mode */
@@ -19,8 +23,6 @@ body.dark .ToDoListContainer {
 }
 
 body.dark .ToDoList-InputTextBox {
-    background-color: #1e1e1e;
-    color: #fff;
     border-color: #444;
 }
 
@@ -87,7 +89,18 @@ body.dark .DarkModeToggle {
 
 .FixedInput {
     flex-shrink: 0;
-    padding: 15px 0;
+    padding: 75px 0;
+    border-radius: 50%;
+    margin: 20px 0;
+
+    background-image: url('../../public/images/WinterCalls-Dev.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body.dark .FixedInput {
+    background-image: url('../../public/images/Mountain-Dev.jpg');
 }
 
 .ScrollableList {
@@ -95,5 +108,5 @@ body.dark .DarkModeToggle {
     flex-grow: 1;
     overflow-y: auto;
     scrollbar-width: none;
-    
+    max-height: 65vh;
 }
