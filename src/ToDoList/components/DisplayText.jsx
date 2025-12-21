@@ -1,4 +1,58 @@
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+
+function SortableItem({ task, toggleComplete, handleDelete }) {
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+    } = useSortable({ id: task.id });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition
+    };
+
+    return (
+        <li
+            ref={setNodeRef}
+            style={style}
+            className="ToDoListContainer"
+        >
+            <span className="DragHandle" {...attributes} {...listeners}>
+                ☰
+            </span>
+
+            <span
+                className={`Text ${task.completed ? 'Completed' : ''}`}
+                onClick={() => toggleComplete(task.id)}
+            >
+                {task.text}
+            </span>
+
+            {!task.completed && (
+                <button
+                    className="DeleteButton"
+                    onClick={() => handleDelete(task.id)}
+                >
+                    Delete
+                </button>
+            )}
+        </li>
+    )
+}
+
+export default SortableItem
+
 import './DisplayText.css';
+import { DndContext, closestCenter } from '@dnd-kit/core';
+import {
+    SortableContext,
+    verticalListSortingStrategy,
+    arrayMove
+} from '@dnd-kit/sortable';
 
 export function DisplayText({ tasks, setTasks }) {
 
@@ -18,28 +72,34 @@ export function DisplayText({ tasks, setTasks }) {
         )
     }
 
-    return (
-        <ul className="ToDoList">
-            {tasks.map(task => (
-                <li key={task.id} className='ToDoListContainer'>
-                    <span
-                        className={`Text ${task.completed ? 'Completed' : ''}`}
-                        onClick={() => toggleComplete(task.id)}
-                    >
-                        {task.text}
-                    </span>
+    const handleDragEnd = (event) => {
+        const { active, over } = event
+        if (!over || active.id === over.id) return
 
-                    {!task.completed && (
-                        <button
-                            className="DeleteButton"
-                            onClick={() => handleDelete(task.id)}
-                        >
-                            Delete
-                        </button>
-                    )}
-                </li>
-            ))
-            }
-        </ul >
+        setTasks(prev => {
+            const oldIndex = prev.findIndex(t => t.id === active.id)
+            const newIndex = prev.findIndex(t => t.id === over.id)
+            return arrayMove(prev, oldIndex, newIndex)
+        })
+    }
+
+    return (
+        <DndContext onDragEnd={handleDragEnd}>
+            <SortableContext
+                items={tasks.map(task => task.id)}
+                strategy={verticalListSortingStrategy}
+            >
+                <ul className="ToDoList">
+                    {tasks.map(task => (
+                        <SortableItem
+                            key={task.id}
+                            task={task}
+                            toggleComplete={toggleComplete}
+                            handleDelete={handleDelete}
+                        />
+                    ))}
+                </ul>
+            </SortableContext>
+        </DndContext>
     )
 }
