@@ -21,14 +21,16 @@ function SortableItem({ task, toggleComplete, handleDelete }) {
             style={style}
             className="ToDoListContainer"
         >
-            <span className="DragHandle" {...attributes} {...listeners}>
-                ☰
-            </span>
+
 
             <span
                 className={`Text ${task.completed ? 'Completed' : ''}`}
                 onClick={() => toggleComplete(task.id)}
             >
+                <span className="DragHandle" {...attributes} {...listeners}>
+                    ☰
+                </span>
+
                 {task.text}
             </span>
 
