@@ -47,8 +47,8 @@ function SortableItem({ task, toggleComplete, handleDelete }) {
 }
 
 export default SortableItem
-
 import './DisplayText.css';
+
 import { DndContext, closestCenter } from '@dnd-kit/core';
 import {
     SortableContext,

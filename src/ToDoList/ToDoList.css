@@ -1,14 +1,14 @@
 /* 🌞 Light mode (default) */
 body {
     position: relative;
-    background-image: url('/images/FlowersShadow-Dev.jpg');
+    background-image: url('/images/CreamPaint-Dev.jpg');
     background-size: cover;
     background-position: center;
     
     color: #222;
     font-family: Arial;
     margin: 0 auto;
-    width: 85%;
+    width: 95%;
     transition: color 0.3s;
 }
 
@@ -27,13 +27,13 @@ body::before {
 /* 🌙 Dark mode */
 body.dark {
     background-image: none;
-    background-color: #0f0f0f;
+    background-color: #000000;
     color: #f5f5f5;
 }
 
 /* Components inherit automatically */
 body.dark .ToDoListContainer {
-    background-color: #0f0f0f;
+    background-color: #000000;
     color: #f5f5f5;
 }
 
@@ -108,9 +108,9 @@ body.dark .DarkModeToggle {
     border-radius: 25px;
     margin: 20px 0;
 
-    background-image: url('/images/WinterCalls-Dev.jpg');
+    background-image: url('/images/Flowers-Dev.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 65%;
     background-repeat: no-repeat;
 }
 
