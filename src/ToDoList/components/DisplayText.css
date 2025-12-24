@@ -46,7 +46,10 @@
     white-space: nowrap;
 }
 
-
+.TaskText.Completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
 
 .DeleteButton {
     margin-left: 12px;

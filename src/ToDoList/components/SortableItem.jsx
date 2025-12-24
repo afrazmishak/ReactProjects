@@ -17,14 +17,16 @@ export function SortableItem({ task, toggleComplete, handleDelete }) {
             className="ToDoListContainer"
         >
             <span
-                className={`Text ${task.completed ? 'Completed' : ''}`}
+                className="Text"
                 onClick={() => toggleComplete(task.id)}
             >
                 <span className="DragHandle" {...attributes} {...listeners}>
                     ☰
                 </span>
 
-                <span className="TaskText">{task.text}</span>
+                <span className={`TaskText ${task.completed ? 'Completed' : ''}`}>
+                    {task.text}
+                </span>
 
                 <span
                     className="EyeIcon"
