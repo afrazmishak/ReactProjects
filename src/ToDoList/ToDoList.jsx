@@ -7,7 +7,7 @@ import { Footer } from "./components/Footer"
 const STORAGE_KEY = 'todo_tasks'
 const THEME_KEY = 'todo_theme'
 
-export function ToDoList() {
+export default function ToDoList() {
     const [tasks, setTasks] = useState(() => {
         const storedTasks = localStorage.getItem(STORAGE_KEY)
         return storedTasks ? JSON.parse(storedTasks) : []
@@ -24,32 +24,27 @@ export function ToDoList() {
     useEffect(() => {
         localStorage.setItem(THEME_KEY, darkMode ? 'dark' : 'light')
         document.body.classList.toggle('dark', darkMode)
+        document.title = 'Tamer | To-Do List'
     }, [darkMode]);
 
     return (
-        <>
-            <title>Tamer | To-Do List</title>
-            <div className="ToDoLayout">
-                <div className="FixedInput">
-                    <TextInput setTasks={setTasks} />
-                </div>
-
-                <div className="ScrollableList">
-                    <DisplayText tasks={tasks} setTasks={setTasks} />
-                </div>
-
-                <div>
-                    <Footer />
-                </div>
-
-                <button
-                    className="DarkModeToggle"
-                    onClick={() => setDarkMode(prev => !prev)}
-                >
-                    {darkMode ? '☀️' : '🌙'}
-                </button>
+        <div className="ToDoLayout">
+            <div className="FixedInput">
+                <TextInput setTasks={setTasks} />
             </div>
-        </>
 
+            <div className="ScrollableList">
+                <DisplayText tasks={tasks} setTasks={setTasks} />
+            </div>
+
+            <Footer />
+
+            <button
+                className="DarkModeToggle"
+                onClick={() => setDarkMode(prev => !prev)}
+            >
+                {darkMode ? '☀️' : '🌙'}
+            </button>
+        </div>
     )
 }
