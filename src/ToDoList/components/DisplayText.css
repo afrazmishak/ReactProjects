@@ -29,16 +29,6 @@
     text-overflow: ellipsis;
 }
 
-.EyeIcon {
-    cursor: pointer;
-    opacity: 0.7;
-    font-size: 16px;
-}
-
-.EyeIcon:hover {
-    opacity: 1;
-}
-
 .TaskText {
     flex-grow: 1;
     overflow: hidden;
@@ -49,6 +39,16 @@
 .TaskText.Completed {
     text-decoration: line-through;
     opacity: 0.6;
+}
+
+.EyeIcon {
+    cursor: pointer;
+    opacity: 0.7;
+    font-size: 16px;
+}
+
+.EyeIcon:hover {
+    opacity: 1;
 }
 
 .DeleteButton {
